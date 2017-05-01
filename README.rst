@@ -42,6 +42,8 @@ MCOW contains many different modules and mixins, listed below.
   applications. It provides Overscaling and Downscaling toggleable options.
   Background Color is customizable and can be a tiled texture if desired.;
 - Animation: Basic animation functions for windows.
+- ColorMixer: If you need a colormixer this is for you.
+- RearrangeList: A control that remembers how you rearranged it, with checkboxes yep.
 
 
 Bugs and Limitations: many, patches and fixes welcome :-D
