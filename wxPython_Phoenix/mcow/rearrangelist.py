@@ -401,15 +401,8 @@ class RearrangeCtrl(wx.Panel):
             self.EnableButtons()
 
     def EnableButtons(self):
-        if self.rearrangelist.CanMoveCurrentUp():
-            self.btnup.Enable(True)
-            self.btndown.Enable(self.rearrangelist.CanMoveCurrentDown())
-        elif self.rearrangelist.CanMoveCurrentDown():
-            self.btnup.Enable(False)
-            self.btndown.Enable(True)
-        else:
-            self.btnup.Enable(False)
-            self.btndown.Enable(False)
+        self.btnup.Enable(self.rearrangelist.CanMoveCurrentUp())
+        self.btndown.Enable(self.rearrangelist.CanMoveCurrentDown())
 
     def OnMoveCurrentDown(self, event):
         self.rearrangelist.MoveCurrentDown()
