@@ -15,7 +15,7 @@ tr.v. craft ed
 adj. op ti mal
     1. Most favorable or desirable; optimum.
 
-n. widg its
+noun. widg its
     1. Graphical user interface(GUI) elements.
 
 
