@@ -211,7 +211,7 @@ class ShapedBitmapButtonFrame(wx.Frame):
 
 class ShapedBitmapButtonApp(wx.App):
     def OnInit(self):
-        gMainWin = ShapedBitmapButtonFrame(None)
+        gMainWin = ShapedBitmapButtonFrame(None, sys.stdout)
         gMainWin.SetTitle('ShapedBitmapButton ShapedFrame Demo')
         gMainWin.Show(True)
 
