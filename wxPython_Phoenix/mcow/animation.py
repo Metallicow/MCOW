@@ -68,7 +68,7 @@ def SmoothMove(windo, moveToPos, animStep=42):
         wxMilliSleep(10)
 
     windoX, windoY = windo_GetPosition()
-    print(windo_GetPosition(), moveToPos)
+    ## print(windo_GetPosition(), moveToPos)
     if ((windoX == moveToPosX and windoY == moveToPosY)
          or ((windoX + 1 == moveToPosX) and (windoY + 1 == moveToPosY))
          or ((windoX - 1 == moveToPosX) and (windoY - 1 == moveToPosY))
