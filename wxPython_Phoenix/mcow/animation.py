@@ -234,12 +234,12 @@ if __name__ == '__main__':
         def stop(self):
             """Stop the Thread."""
             self.stopTimer.set()
-            print('stop')
+            ## print('stop')
 
         def stopped(self):
             """Is the Thread stopped?"""
             return self.stopTimer.isSet()
-            print('stopped')
+            ## print('stopped')
 
     class AnimationTestPanel1(wx.Panel):
         """SmoothMove Testing"""
