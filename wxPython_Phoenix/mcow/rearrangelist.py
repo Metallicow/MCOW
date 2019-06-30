@@ -23,8 +23,8 @@
 # -------------------------------------------------------------------------- #
 
 """
-wx.lib.mcow.rearrangelist.py
-============================
+src.lib.classic.mcow.rearrangelist.py
+=====================================
 
 This widget is implemented in Phoenix but not Classic(At least not as of this writing).
 ...so reimplement it for wxPython Classic.
