@@ -8,3 +8,5 @@
 .. image:: ThreeWaySplitter.png
 
 .. image:: ThreeWaySplitterPreview2.png
+
+.. image:: coloring.png
