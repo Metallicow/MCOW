@@ -666,8 +666,10 @@ if __name__ == '__main__':
     import sys
 
     class MyFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, wx.ID_ANY, "Coloring Demo")
+        def __init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString,
+                     pos=wx.DefaultPosition, size=wx.DefaultSize,
+                     style=wx.DEFAULT_FRAME_STYLE, name='Frame'):
+            wx.Frame.__init__(self, parent, id, title, pos, size, style, name)
 
             wxVER = 'wxPython %s' % wx.version()
             pyVER = 'python %d.%d.%d.%s' % sys.version_info[0:4]
@@ -697,7 +699,12 @@ if __name__ == '__main__':
 
     app = wx.App(0)
 
-    frame = MyFrame(None)
+    initialSize = wx.DefaultSize
+    displayX, displayY = wx.GetDisplaySize()
+    if displayX > 1580 and displayY > 620:
+        initialSize = wx.Size(1580, 620)
+
+    frame = MyFrame(None, wx.ID_ANY, "Coloring Demo", pos=(50, 50), size=initialSize)
     app.SetTopWindow(frame)
     frame.Show()
 
