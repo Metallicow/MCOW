@@ -3,7 +3,7 @@
 
 # -------------------------------------------------------------------------- #
 # (c) Edward Greig, @ 25 Jun 2019 - coloring
-# Latest Revision: Edward Greig @ 25 Jun 2019, 21.00 GMT
+# Latest Revision: Edward Greig @ 30 Dec 2019, 21.00 GMT
 #
 # For All Kind Of Problems, Requests Of Enhancements And Bug Reports, Please
 # Write To Me At:
@@ -28,9 +28,9 @@ License And Version
 coloring is distributed under the wxPython license.
 
 Edward Greig, @ 25 Jun 2019
-Latest revision: Edward Greig @ 25 Jun 2019, 21.00 GMT
+Latest revision: Edward Greig @ 30 Dec 2019, 21.00 GMT
 
-Version 0.1
+Version 0.2
 
 """
 
@@ -418,28 +418,22 @@ def generateColorBar():
     a = 255
     colorBar = []
     # Start at Red (255, 0, 0) and go to Yellow (255, 255, 0)
-    for i in range(0, 256, 1):
-        g = i
+    for g in range(0, 256, 1):
         colorBar.append((r, g, b, a))
     # Start at Yellow (255, 255, 0) and go to Green (0, 255, 0)
-    for i in reversed(range(0, 256, 1)):
-        r = i
+    for r in reversed(range(0, 256, 1)):
         colorBar.append((r, g, b, a))
     # Start at Green (0, 255, 0) and go to Cyan (0, 255, 255)
-    for i in range(0, 256, 1):
-        b = i
+    for b in range(0, 256, 1):
         colorBar.append((r, g, b, a))
     # Start at Cyan (0, 255, 255) and go to Blue (0, 0, 255)
-    for i in reversed(range(0, 256, 1)):
-        g = i
+    for g in reversed(range(0, 256, 1)):
         colorBar.append((r, g, b, a))
     # Start at Blue (0, 0, 255) and go to Magenta (255, 0, 255)
-    for i in range(0, 256, 1):
-        r = i
+    for r in range(0, 256, 1):
         colorBar.append((r, g, b, a))
     # Start at Magenta (255, 0, 255) and go to Red (255, 0, 0)
-    for i in reversed(range(0, 256, 1)):
-        b = i
+    for b in reversed(range(0, 256, 1)):
         colorBar.append((r, g, b, a))
 
     # Remove the duplicates while preserving the order.
@@ -600,13 +594,13 @@ def makeSquaredGradientAswxImage(color1=(255, 0, 0, 255),
     dc = wx.MemoryDC(bmp)
     dc.GradientFillLinear(rect=wxRect(x=0, y=0, width=256, height=1),
                           initialColour=wxColour(color1[0],
-                                                  color1[1],
-                                                  color1[2],
-                                                  color1[3]),
+                                                 color1[1],
+                                                 color1[2],
+                                                 color1[3]),
                           destColour=wxColour(color2[0],
-                                               color2[1],
-                                               color2[2],
-                                               color2[3]),
+                                              color2[1],
+                                              color2[2],
+                                              color2[3]),
                           nDirection=wx.RIGHT)
     tmpImg = dc.GetAsBitmap().ConvertToImage()
     del dc
@@ -621,13 +615,13 @@ def makeSquaredGradientAswxImage(color1=(255, 0, 0, 255),
     dc = wx.MemoryDC(bmp)
     dc.GradientFillLinear(rect=wxRect(x=0, y=0, width=256, height=1),
                           initialColour=wxColour(color3[0],
-                                                  color3[1],
-                                                  color3[2],
-                                                  color3[3]),
+                                                 color3[1],
+                                                 color3[2],
+                                                 color3[3]),
                           destColour=wxColour(color4[0],
-                                               color4[1],
-                                               color4[2],
-                                               color4[3]),
+                                              color4[1],
+                                              color4[2],
+                                              color4[3]),
                           nDirection=wx.RIGHT)
     tmpImg = dc.GetAsBitmap().ConvertToImage()
     del dc
@@ -644,13 +638,13 @@ def makeSquaredGradientAswxImage(color1=(255, 0, 0, 255),
     for i, gradcolor in enumerate(gradientColors1, 0):
         dc_GradientFillLinear(rect=wxRect(x=i, y=0, width=1, height=256),
                               initialColour=wxColour(gradcolor[0],
-                                                      gradcolor[1],
-                                                      gradcolor[2],
-                                                      gradcolor[3]),
+                                                     gradcolor[1],
+                                                     gradcolor[2],
+                                                     gradcolor[3]),
                               destColour=wxColour(gradientColors2[i][0],
-                                                   gradientColors2[i][1],
-                                                   gradientColors2[i][2],
-                                                   gradientColors2[i][3]),
+                                                  gradientColors2[i][1],
+                                                  gradientColors2[i][2],
+                                                  gradientColors2[i][3]),
                               nDirection=wxBOTTOM)
 
     bmp = dc.GetAsBitmap()
